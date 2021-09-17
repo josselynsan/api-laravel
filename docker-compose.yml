@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+	laravel-db:
+	    image: mysql:5.7
+	    enviroment:
+		MYSQL_ROOT_PASSWORD:
+		MYSQL_DATABASE: laravel
+		MYSQL_USER: usr_laravel
+		MYSQL_PASSWORD: usr.db.2019
+	    ports:
+		- 33069:3306
+            volumes:
+		- ./database/schemas/:/var/lib/mysql
+	    networks:
+		laravel_prod_net:
+		  ipv4_address: 172.21.100.9
+	laravel-prod:
+
+	
